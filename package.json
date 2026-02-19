@@ -1,0 +1,30 @@
+{
+  "name": "ufuk-hijau-landing",
+  "version": "1.0.0",
+  "description": "Landing page statis untuk jasa pemasangan solar panel Ufuk Hijau",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "echo \"No tests configured\"",
+    "build": "echo \"Static site - no build needed\""
+  },
+  "keywords": [
+    "solar panel",
+    "PLTS",
+    "hemat listrik",
+    "landing page",
+    "static site"
+  ],
+  "author": "Ufuk Hijau",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/ufuk-hijau.git"
+  },
+  "devDependencies": {
+    "lighthouse": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
