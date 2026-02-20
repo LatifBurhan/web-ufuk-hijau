@@ -59,13 +59,13 @@ a:hover {
     padding: 0 1.5rem;
 }
 
-/* Header */
+/* Header & Navbar */
 .header {
     background: #fff;
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header .container {
@@ -73,6 +73,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    width: 100%;
 }
 
 .logo {
@@ -82,8 +83,11 @@ a:hover {
     font-size: 1.25rem;
     font-weight: 700;
     color: #1B5E20;
+    z-index: 1001;
+    order: 1;
 }
 
+/* Nav Desktop */
 .nav {
     display: flex;
     gap: 2rem;
@@ -106,12 +110,35 @@ a:hover {
     color: #fff !important;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .nav-cta:hover {
     background: #0d3a14;
     text-decoration: none;
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    order: 2;
+    margin-left: auto;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: #1B5E20;
+    transition: all 0.3s ease;
 }
 
 /* Buttons */
@@ -270,7 +297,7 @@ a:hover {
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .benefit-icon {
@@ -387,7 +414,7 @@ a:hover {
 
 .paket-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .paket-card.featured {
@@ -529,7 +556,7 @@ a:hover {
 }
 
 .cta-final p {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
@@ -567,17 +594,69 @@ a:hover {
     color: #4CAF50;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer-logo svg {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-logo small {
+    display: block;
+    font-size: 0.7rem;
+    color: #2E7D32;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #2E7D32;
+}
+
+.footer-contact {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact strong {
+    color: #fff;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background: #2E7D32;
     border-radius: 50%;
     color: #fff;
@@ -590,8 +669,8 @@ a:hover {
 }
 
 .social-links svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .footer-bottom {
@@ -600,35 +679,122 @@ a:hover {
     text-align: center;
     color: #999;
     font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .footer-bottom a {
     color: #2E7D32;
 }
 
+.footer-cta {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1fa857;
+    text-decoration: none;
+}
+
+.btn-whatsapp svg {
+    width: 20px;
+    height: 20px;
+}
+
+.floating-whatsapp {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+.floating-whatsapp:hover {
+    background: #1fa857;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.75rem;
+    .menu-toggle {
+        display: flex;
     }
 
-    h2 {
-        font-size: 1.5rem;
+    /* Animasi X yang Simetris */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
 
-    .header .container {
-        flex-direction: column;
-        gap: 1rem;
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
     }
 
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Overlay Menu Mobile */
     .nav {
-        flex-direction: column;
-        gap: 0.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav a {
-        padding: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        padding: 2rem 0;
     }
 
     .hero .container {
@@ -636,26 +802,35 @@ a:hover {
         gap: 2rem;
     }
 
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+    }
+
     .hero-cta {
-        flex-direction: column;
+        gap: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .hero-cta .btn {
-        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 
+    /* Simulasi Mobile */
     .simulasi-result {
         grid-template-columns: 1fr;
     }
 
-    .proses-timeline {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 2rem 0;
-    }
-
+    /* Sections Mobile */
     .masalah,
     .keunggulan,
     .simulasi,
@@ -664,6 +839,26 @@ a:hover {
     .testimoni,
     .cta-final {
         padding: 2rem 0;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .floating-whatsapp {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-whatsapp svg {
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -680,20 +875,37 @@ a:hover {
         font-size: 1.25rem;
     }
 
-    .nav {
-        gap: 0.25rem;
+    .hero {
+        padding: 1.5rem 0;
     }
 
-    .nav a {
-        font-size: 0.85rem;
+    .hero .container {
+        gap: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
     }
 
     .hero-desc {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+        gap: 0.4rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-cta .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
     }
 
     .btn {
